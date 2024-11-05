@@ -1,6 +1,8 @@
 package net.javaguides.banking.service.impl;
 
 import net.javaguides.banking.dto.AccountDto;
+import net.javaguides.banking.entity.Account;
+import net.javaguides.banking.entity.mapper.AccountMapper;
 import net.javaguides.banking.repository.AccountRepository;
 import net.javaguides.banking.service.AccountService;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,8 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public AccountDto createAccount(AccountDto accountDto) {
-        return null;
+        Account account = AccountMapper.mapToAccount(accountDto);
+        Account savedAccount = accountRepository.save(account);
+        return AccountMapper.mapToAccountDto(savedAccount);
     }
 }
