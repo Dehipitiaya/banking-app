@@ -1,5 +1,4 @@
 package net.javaguides.banking.entity.mapper;
-
 import net.javaguides.banking.dto.AccountDto;
 import net.javaguides.banking.entity.Account;
 
@@ -20,7 +19,7 @@ public class AccountMapper {
                 account.getId(),
                 account.getAccountHolderName(),
                 account.getBalance()
-        )
+        );
                 return accountDto;
     }
 }
